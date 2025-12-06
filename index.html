@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking Computers | Deep Dive Computer Science Education</title>
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #e0e0e0;
+            --accent-color: #00ff41; /* Hacker Green - kept for brand identity */
+            --secondary-color: #4a4a4a;
+            --card-bg: #111111;
+            --font-main: 'Courier New', Courier, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- HEADER --- */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center;
+            padding: 100px 0 60px;
+        }
+
+        .glitch-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* Typing cursor effect */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 3rem;
+            background-color: var(--accent-color);
+            animation: blink 1s infinite;
+            vertical-align: text-bottom;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 650px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--accent-color);
+        }
+
+        /* --- ABOUT SECTION --- */
+        .mission {
+            padding: 60px 0;
+            border-top: 1px solid var(--secondary-color);
+        }
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--accent-color);
+        }
+        .mission-text {
+            font-size: 1.1rem;
+        }
+
+        /* --- COURSES GRID --- */
+        .courses {
+            padding: 60px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--secondary-color);
+            padding: 25px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: #222;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: #ccc;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: auto;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--secondary-color);
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .glitch-title { font-size: 2rem; }
+            .cursor { height: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">&gt; breaking.computers_</div>
+                <div class="nav-links">
+                    <a href="#">Curriculum</a>
+                    <a href="#">Philosophy</a>
+                    <a href="mailto:contact@breaking.computer">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="glitch-title">
+                Master Computer Science.<br>
+                By Deconstructing It<span class="cursor"></span>
+            </h1>
+            <p>
+                From memory management to distributed systems. We teach Computer Science 
+                by peeling back the layers and understanding how software works 
+                under the hood.
+            </p>
+            <a href="#" class="cta-button">Explore Courses</a>
+        </div>
+    </section>
+
+    <section class="mission">
+        <div class="container">
+            <h2 class="section-title">Why Break Things?</h2>
+            <p class="mission-text">
+                To build robust software, you must understand where it breaks. 
+                Whether it's an algorithmic bottleneck, a memory leak in C, or a 
+                supply chain vulnerability, our curriculum bridges theoretical 
+                Computer Science with rigorous engineering practice.
+            </p>
+        </div>
+    </section>
+
+    <section class="courses">
+        <div class="container">
+            <h2 class="section-title">Core Modules</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>System Internals</h3>
+                    <p>Operating Systems, Memory Management, and Pointers. Understand how code interacts with hardware at the lowest level.</p>
+                    <span class="tag">Systems</span>
+                </div>
+                
+                <div class="card">
+                    <h3>Algorithmic Thinking</h3>
+                    <p>Data Structures and Complexity. Learn to solve problems efficiently and understand the mathematical limits of computation.</p>
+                    <span class="tag">Theory</span>
+                </div>
+
+                <div class="card">
+                    <h3>Software Security</h3>
+                    <p>Understanding the modern threat landscape. From secure coding practices to analyzing malicious supply chain attacks.</p>
+                    <span class="tag">Security</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2025 Breaking Computers. <strong>All Rights Reserved.</strong><br>
+                <br>
+                This content is proprietary. Unauthorized copying, modification, <br>
+                distribution, or use of this code/content is strictly prohibited.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
