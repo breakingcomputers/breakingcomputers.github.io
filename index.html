@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Breaking Computers | CS Education</title>
+    <title>Breaking Computers</title>
     <style>
       /* --- CSS VARIABLES & THEMES --- */
       :root {
@@ -117,14 +117,15 @@
           position: relative;
       }
 
-      /* Typing cursor effect */
+      /* --- UPDATED CURSOR (DOT STYLE) --- */
       .cursor {
           display: inline-block;
-          width: 10px;
-          height: 3rem;
+          width: 15px;
+          height: 15px;
           background-color: var(--accent-color);
+          border-radius: 50%; /* Makes it a circle */
+          margin-left: 5px;   /* Small space from text */
           animation: blink 1s infinite;
-          vertical-align: text-bottom;
       }
 
       .hero p {
@@ -226,7 +227,6 @@
       /* Mobile Adjustments */
       @media (max-width: 600px) {
           .glitch-title { font-size: 2rem; }
-          .cursor { height: 2rem; }
           .nav-links a { margin-left: 10px; font-size: 0.8rem; }
       }
     </style>
