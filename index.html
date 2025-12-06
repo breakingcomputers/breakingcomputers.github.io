@@ -90,8 +90,7 @@
       /* Theme Toggle Button */
       .theme-toggle {
           background: none;
-          /* border: 1px solid var(--secondary-color); */
-          /* border-radius: 4px; */
+          border: none; /* REMOVED BORDER */
           color: var(--text-color);
           cursor: pointer;
           padding: 5px 10px;
@@ -101,8 +100,7 @@
           transition: 0.3s;
       }
       .theme-toggle:hover {
-          border-color: var(--accent-color);
-          color: var(--accent-color);
+          color: var(--accent-color); /* Removed border-color change */
       }
 
       /* --- HERO SECTION --- */
@@ -117,13 +115,14 @@
           position: relative;
       }
 
+        /* UPDATED CURSOR CSS */
         .cursor {
             display: inline-block;
-            width: 2rem;
-            height: 1rem;            /* Thickness */
+            width: 0.6em;             /* Width proportional to font size */
+            height: 0.15em;           /* Height proportional to font size */
             background-color: var(--accent-color);
-            margin-left: 2px;
-            vertical-align: baseline; /* Aligns bottom of box with the text baseline */
+            margin-left: 0.1em;
+            vertical-align: baseline;
             animation: blink 1s infinite;
         }
 
