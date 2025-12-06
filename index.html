@@ -87,23 +87,28 @@
       }
       .nav-links a:hover { color: var(--accent-color); }
 
-      /* --- THEME TOGGLE (FLAT BUTTON) --- */
+      /* --- THEME TOGGLE (ROUND FLAT BUTTON) --- */
       .theme-toggle {
-          background-color: var(--secondary-color); /* Solid flat background */
-          border: none;                             /* No border */
-          border-radius: 4px;                       /* Slight rounded corners */
+          background-color: var(--secondary-color);
+          border: none;
+          border-radius: 50%;       /* Makes it a circle */
+          width: 40px;              /* Fixed Width */
+          height: 40px;             /* Fixed Height */
+          display: inline-flex;     /* Flexbox to center the icon */
+          align-items: center;      /* Vertical Center */
+          justify-content: center;  /* Horizontal Center */
           color: var(--text-color);
           cursor: pointer;
-          padding: 8px 12px;
+          padding: 0;               /* Reset padding */
           margin-left: 20px;
           font-family: var(--font-main);
-          font-size: 1rem;
+          font-size: 1.2rem;
           line-height: 1;
           transition: background-color 0.3s, color 0.3s;
       }
 
       .theme-toggle:hover {
-          background-color: var(--accent-color);    /* Flat color change */
+          background-color: var(--accent-color);
           color: var(--btn-hover-text);
       }
 
@@ -122,10 +127,10 @@
         /* UPDATED CURSOR CSS */
         .cursor {
             display: inline-block;
-            width: 0.6em;             /* Width proportional to font size */
+            width: 0.8em;             /* Width proportional to font size */
             height: 0.25em;           /* Height proportional to font size */
             background-color: var(--accent-color);
-            margin-left: 0.30em;
+            margin-left: 0.15em;
             vertical-align: baseline;
             animation: blink 1s infinite;
         }
@@ -257,7 +262,7 @@
     <section class="hero">
       <div class="container">
         <h1 class="glitch-title">
-          Learn Computer Science.<br />
+          Master Computer Science.<br />
           By Deconstructing It<span class="cursor"></span>
         </h1>
         <p>
