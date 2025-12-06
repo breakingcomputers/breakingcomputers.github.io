@@ -90,7 +90,7 @@
       /* Theme Toggle Button */
       .theme-toggle {
           background: none;
-          border: 1px solid var(--secondary-color);
+          /* border: 1px solid var(--secondary-color); */
           color: var(--text-color);
           cursor: pointer;
           padding: 5px 10px;
@@ -117,13 +117,13 @@
           position: relative;
       }
 
-      .cursor {
+        .cursor {
             display: inline-block;
-            width: 12px;            /* Width of the character */
-            height: 4px;            /* Thickness of the underscore */
+            width: 12px;
+            height: 4px;            /* Thickness */
             background-color: var(--accent-color);
-            margin-left: 5px;
-            vertical-align: text-bottom; /* Aligns it to the bottom of the text */
+            margin-left: 2px;
+            vertical-align: baseline; /* Aligns bottom of box with the text baseline */
             animation: blink 1s infinite;
         }
 
